@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=124 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/smash3.png" type="Texture" id=2]
@@ -560,11 +560,9 @@ extents = Vector2( 10.9741, 9.35257 )
 [sub_resource type="RectangleShape2D" id=105]
 extents = Vector2( 24, 40.9254 )
 
-[sub_resource type="RectangleShape2D" id=106]
-extents = Vector2( 22.2146, 25.0097 )
-
 [node name="Player" type="KinematicBody2D" groups=[
 "Persist",
+"player",
 ]]
 z_index = 1000
 collision_layer = 8
@@ -587,7 +585,6 @@ script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-current = true
 zoom = Vector2( 2, 2 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -707,8 +704,9 @@ collision_layer = 0
 
 [node name="CrouchCheckCollider" type="CollisionShape2D" parent="MustCrouchCheck"]
 position = Vector2( 2.94298, -99.4351 )
-shape = SubResource( 98 )
 disabled = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 [connection signal="flip_health_bar" from="." to="HealthBar" method="_on_Player_flip_health_bar"]
 [connection signal="health" from="." to="HealthBar" method="_on_Player_health"]
 [connection signal="smash_land" from="." to="Smash" method="_on_Player_smash_land"]

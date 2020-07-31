@@ -55,7 +55,9 @@ func _ready():
 
 "
 
-[node name="Sidescroller" type="Node2D"]
+[node name="Sidescroller" type="Node2D" groups=[
+"player",
+]]
 z_index = 4096
 script = ExtResource( 7 )
 __meta__ = {

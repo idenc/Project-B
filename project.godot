@@ -8,9 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://level_generation/Actor.gd"
+}, {
+"base": "Node",
+"class": "RandomWalker",
+"language": "GDScript",
+"path": "res://level_generation/RandomWalker.gd"
+}, {
+"base": "Node2D",
+"class": "Rooms",
+"language": "GDScript",
+"path": "res://level_generation/Rooms.gd"
+}, {
+"base": "Node",
+"class": "Walker",
+"language": "GDScript",
+"path": "res://Walker.gd"
+} ]
 _global_script_class_icons={
-
+"Actor": "",
+"RandomWalker": "",
+"Rooms": "",
+"Walker": ""
 }
 
 [application]
@@ -128,4 +151,5 @@ sprint={
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
